@@ -1,0 +1,23 @@
+<div class="switch">
+    <label>
+        {{Text}}
+        <input type="checkbox" id="sw{{header}}{{id}}" onchange="ons{{header}}{{id}}(this);">
+        <span class="lever"></span>
+    </label>
+    <script>
+        var s{{header}}{{id}} = document.getElementById("sw{{header}}{{id}}")
+        socket.on("{{header}}", function (data) {
+            s{{header}}{{id}}.checked = data["{{id}}"];
+        });
+        function ons{{header}}{{id}}(s) {
+            console.log("s1");
+            var d = {};
+            d.device = "{{header}}";
+            d.action = "{{id}}_change";
+            d.type = "switch";
+            d.id = "{{id}}";
+            d.value = s.checked;
+            socket.emit("device", JSON.stringify(d));
+        };                              
+    </script>
+</div>

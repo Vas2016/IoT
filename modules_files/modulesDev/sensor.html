@@ -1,0 +1,10 @@
+<div class="sensor">
+    <p class="grey-text text-darken-3" style="font-size:18px">{{Text}}: <span class="grey-text text-darken-3" id="sen{{header}}{{id}}">>>></span></p>
+    
+    <script>
+        var sen{{header}}{{id}} = document.getElementById("sen{{header}}{{id}}");
+        socket.on("{{header}}", function (data) {
+            sen{{header}}{{id}}.textContent = data["{{id}}"];
+        });                           
+    </script>
+</div>

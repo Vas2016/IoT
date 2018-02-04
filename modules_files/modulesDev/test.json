@@ -1,0 +1,46 @@
+{
+    "tab1": {
+        "tab1name":"Раз",
+        "body": [
+            {
+                "type": "button",
+                "id": "btn1",
+                "name":"полить"
+            }
+        ]
+    },
+    "tab2": {
+        "tab2name":"Два",
+        "body":[
+            {
+                "type": "button",
+                "id": "btn2",
+                "name":"полить2"
+            },
+            {
+                "type":"html",
+                "val":"<p>tester</p>"
+            },
+            {
+                "type": "button",
+                "id": "btn2",
+                "name":"полить2"
+            }
+        ]
+    },
+    "tab3": {
+        "tab3name":"Три",
+        "body":[
+            {
+                "type": "switch",
+                "id": "s1",
+                "name":"s11"
+            },
+            {
+                "type": "switch",
+                "id": "s2",
+                "name":"s22"
+            }
+        ]
+    }
+}
