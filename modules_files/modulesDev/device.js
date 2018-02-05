@@ -8,7 +8,7 @@ var path = require("path");
 function device(_deviceType, _deviceName) {
     this.deviceType = _deviceType;
     this.deviceName = _deviceName;
-    deviceData = {};
+    var deviceData = {};
 
     var hj = { d: {} };
 
@@ -91,10 +91,16 @@ function device(_deviceType, _deviceName) {
         console.log(JSON.stringify(data));
         if (data.type == "switch") {
             deviceData[data.id] = data.value;
+            var msgToSend = {};
+            msgToSend.action = data.action;
+            msgToSend.type = data.type;
             console.log(this.getData())
             gv.modules_events.emit("device_in", deviceData, this.deviceName);
         }
         else if (data.type == "button") {
+            var msgToSend = {};
+            msgToSend.action = data.action;
+            msgToSend.type = data.type;
             console.log(this.getData())
             gv.modules_events.emit("device_in", deviceData, this.deviceName);
         }
